@@ -10,6 +10,7 @@ class Product(models.Model):
     description = models.TextField(max_length=500, blank=True)
     price = models.IntegerField()
     image = models.ImageField(upload_to = 'photo/products')
+    #ombordagi maxsulotlar  soni
     stock = models.IntegerField()
     is_available = models.BooleanField(default=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
