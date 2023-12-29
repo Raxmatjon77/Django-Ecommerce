@@ -21,9 +21,10 @@ class StoreBaseView(View):
                 }
 
 
-        return  render(request,'store.html',context)
+        return render(request,'store.html',context)
 def product_detail(request,category_slug,product_slug):
         product=get_object_or_404(Product,slug=product_slug,category__slug=category_slug)
+        # product=Product.objects.filter(slug=product_slug,category_slug=category_slug)
         context={
             'product':product
         }

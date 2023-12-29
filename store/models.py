@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import  reverse
 
 # Create your models here.
 from category.models import Category
@@ -19,3 +20,6 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    def get_url(self):
+        return  reverse('product_detail',args=[self.category.slug,self.slug])
